@@ -1639,7 +1639,9 @@ Form.editors.Select = Form.editors.Base.extend({
   },
 
   setValue: function(value) {
-    this.$el.val(value);
+    if (this.$el.find('option[value="' + value + '"]').length > 0) {
+      this.$el.val(value);
+    }
   },
 
   focus: function() {

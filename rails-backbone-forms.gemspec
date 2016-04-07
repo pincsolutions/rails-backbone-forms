@@ -5,8 +5,8 @@ require 'rails/backbone/forms/version'
 Gem::Specification.new do |s|
   s.name        = 'rails-backbone-forms'
   s.version     = Rails::Backbone::Forms::VERSION
-  s.authors     = ['Aubrey Holland']
-  s.email       = ['aubreyholland@gmail.com']
+  s.authors     = ['Aubrey Holland', 'Ruslan Kenzhebekov']
+  s.email       = ['aubreyholland@gmail.com', 'rkenzheb@pincsolutions.com']
   s.homepage    = ""
   s.summary     = %q{A wrapper for backbone-forms in the Rails asset pipeline}
   s.description = %q{Rails 3.1 support for the backbone-forms library}
