@@ -1639,7 +1639,7 @@ Form.editors.Select = Form.editors.Base.extend({
   },
 
   setValue: function(value) {
-    if (this.$el.find('option[value="' + value + '"]').length > 0) {
+    if (value != undefined) {
       this.$el.val(value);
     }
   },
