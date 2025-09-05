@@ -85,18 +85,18 @@ var Form = Backbone.View.extend({
     //Create fields
     var fields = this.fields = {};
 
-    _.each(selectedFields, function(key) {
+    _.each(selectedFields, _.bind(function(key) {
       var fieldSchema = schema[key];
       fields[key] = this.createField(key, fieldSchema);
-    }, this);
+    }, this));
 
     //Create fieldsets
     var fieldsetSchema = options.fieldsets || [selectedFields],
         fieldsets = this.fieldsets = [];
 
-    _.each(fieldsetSchema, function(itemSchema) {
+    _.each(fieldsetSchema, _.bind(function(itemSchema) {
       this.fieldsets.push(this.createFieldset(itemSchema));
-    }, this);
+    }, this));
   },
 
   /**
@@ -1705,7 +1705,7 @@ Form.editors.Select = Form.editors.Base.extend({
     var html = [];
 
     //Generate HTML
-    _.each(array, function(option) {
+    _.each(array, _.bind(function(option) {
       if (_.isObject(option)) {
         if (option.group) {
           html.push('<optgroup label="'+option.group+'">');
@@ -1719,7 +1719,7 @@ Form.editors.Select = Form.editors.Base.extend({
       else {
         html.push('<option>'+option+'</option>');
       }
-    }, this);
+    }, this));
 
     return html.join('');
   }
